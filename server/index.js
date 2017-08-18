@@ -7,7 +7,7 @@ const BUCKET_NAME = `rekognition-demo-1`;
 function getImageMetadata(){
   return new Promise((resolve, reject)=>{
 
-    const imagesPath = path.join(__dirname, "../client/photos/");
+    const imagesPath = path.join(__dirname, "../docs/photos/");
     console.log(`Reading images from ${imagesPath}`);
 
     fs.readdir(imagesPath, function(err, items) {  
@@ -140,7 +140,7 @@ function recognize(bucketName, imageMeta){
 
 function saveLabeledImages(labeledImages){
   return new Promise((resolve, reject) =>  {
-    fs.writeFile(path.join(__dirname, "../client/", "labels.json"), JSON.stringify(labeledImages), (err)=>{
+    fs.writeFile(path.join(__dirname, "../docs/", "labels.json"), JSON.stringify(labeledImages), (err)=>{
       if (err){
         console.log(err);
         reject(err);
