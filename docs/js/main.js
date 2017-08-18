@@ -4,8 +4,7 @@ $(function(){
 
     $.get("labels.json", function(data){
         var html = "";
-        var items = JSON.parse(data);
-        while (items.length){
+        while (data.length){
             var item = items.pop();
             html += "<div class=\"thumbnail\"><p>" + item.labels.join(", ") + "</p><img class=\"photo\" alt=\"" + item.id + "\" src=\"photos/" + item.filename + "\"/></div>";
         }
